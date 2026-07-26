@@ -50,6 +50,8 @@ Repository = "https://github.com/OpenVisionLabOrg/openvisionlab"
 Issues = "https://github.com/OpenVisionLabOrg/openvisionlab/issues"
 
 [dependency-groups]
-dev = []
+dev = [
+    "ruff>=0.16.0",
+]
 docs = []
 test = []
