@@ -1,0 +1,22 @@
+[project]
+name = "openvisionlab"
+version = "0.1.0.dev0"
+description = "A modern, extensible, and production-ready Computer Vision framework for research, education, and real-world AI applications."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+authors = [
+    { name = "Mehran Mirzaei" }
+]
+license = "Apache-2.0"
+keywords = [
+    "computer-vision",
+    "deep-learning",
+    "machine-learning",
+    "opencv",
+    "pytorch"
+]
+[project.urls]
+Homepage = "https://github.com/OpenVisionLabOrg/openvisionlab"
+Repository = "https://github.com/OpenVisionLabOrg/openvisionlab"
+Issues = "https://github.com/OpenVisionLabOrg/openvisionlab/issues"
