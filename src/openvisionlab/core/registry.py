@@ -3,7 +3,10 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Generic, TypeVar, overload
 
-from openvisionlab.core.exceptions import DuplicateRegistrationError
+from openvisionlab.core.exceptions import (
+    ComponentNotFoundError,
+    DuplicateRegistrationError,
+)
 
 T = TypeVar("T")
 
@@ -52,3 +55,22 @@ class Registry(Generic[T]):
                 f"Component '{key}' is already registered in registry '{self._name}'."
             )
         self._items[key] = component
+
+    def get(self, name: str) -> T:
+        """Return a registered component by name.
+
+        Args:
+            name: The component name.
+
+        Returns:
+            The registered component.
+
+        Raises:
+            ComponentNotFoundError: If the component is not registered.
+        """
+        try:
+            return self._items[name]
+        except KeyError as exc:
+            raise ComponentNotFoundError(
+                f"Component '{name}' is not registered in registry '{self._name}'."
+            ) from exc
