@@ -1,22 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
 [project]
 name = "openvisionlab"
 version = "0.1.0.dev0"
-description = "A modern, extensible, and production-ready Computer Vision framework for research, education, and real-world AI applications."
+description =  "A modern, extensible, and production-ready computer vision framework."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+
 authors = [
     { name = "Mehran Mirzaei" }
 ]
-license = "Apache-2.0"
+
+license = { text = "Apache-2.0" }
+
 keywords = [
     "computer-vision",
     "deep-learning",
     "machine-learning",
+    "artificial-intelligence",
     "opencv",
-    "pytorch"
+    "pytorch",
+    "object-detection",
+    "segmentation",
+    "tracking",
 ]
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+dependencies = []
+
 [project.urls]
 Homepage = "https://github.com/OpenVisionLabOrg/openvisionlab"
 Repository = "https://github.com/OpenVisionLabOrg/openvisionlab"
 Issues = "https://github.com/OpenVisionLabOrg/openvisionlab/issues"
+
+[dependency-groups]
+dev = []
+docs = []
+test = []
