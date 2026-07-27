@@ -34,6 +34,9 @@ class Registry(Generic[T]):
         """Return a registered component using dictionary syntax."""
         return self.get(name)
 
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(name={self._name!r}, size={len(self)})"
+
     @overload
     def register(self, obj: T) -> T: ...
 
