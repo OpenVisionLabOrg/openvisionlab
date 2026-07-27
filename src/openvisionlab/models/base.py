@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from pathlib import Path
+from typing import Any
+
+from openvisionlab.types import Device
 
 
 class BaseModel(ABC):
@@ -12,9 +15,11 @@ class BaseModel(ABC):
         *,
         name: str,
         weights: str | Path | None = None,
+        device: Device = Device.CPU,
     ) -> None:
         self._name = name
         self._weights = Path(weights) if weights is not None else None
+        self._device = device
 
     @property
     def name(self) -> str:
@@ -30,3 +35,8 @@ class BaseModel(ABC):
     def predict(self, *args: Any, **kwargs: Any) -> Any:
         """Run inference."""
         raise NotImplementedError
+
+    @property
+    def device(self) -> Device:
+        """Return the execution device."""
+        return self._device
